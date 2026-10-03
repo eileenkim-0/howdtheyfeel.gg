@@ -68,7 +68,7 @@ function Face({emotion, thinking}:Props) {
         // Renderer : tegner 3D scenen i canvas
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true});
         renderer.setPixelRatio(window.devicePixelRatio);
-        renderer.setSize(width, height);
+        renderer.setSize(width, height, false);
         container.appendChild(renderer.domElement);
 
         // Lys & scene 
@@ -94,7 +94,6 @@ function Face({emotion, thinking}:Props) {
                 const model = gltf.scene.children[0];
                 scene.add(model);
                 head = model.getObjectByName('mesh_2') as THREE.Mesh;
-                console.log(Object.keys(head.morphTargetDictionary ?? {}));
             });
         
         // tegne scenen på nytt hele tiden
@@ -112,8 +111,18 @@ function Face({emotion, thinking}:Props) {
             renderer.render(scene, camera);
         });
 
+        const resizeObserver = new ResizeObserver(() => {
+          const w = container.clientWidth;
+          const h = container.clientHeight;
+          renderer.setSize(w,h,false);
+          camera.aspect = w/h;
+          camera.updateProjectionMatrix();
+        });
+        resizeObserver.observe(container);
+
         // rydd opp når komponentnen forsvinner
         return () => {
+            resizeObserver.disconnect();
             renderer.setAnimationLoop(null);
             ktx2Loader.dispose();
             renderer.dispose();
