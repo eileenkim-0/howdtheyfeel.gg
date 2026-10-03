@@ -18,7 +18,7 @@ export const challenges: Challenge[] = [
     { title: 'Make a stranger feel nothing', target: 'neutral', recipient: 'stranger', minPercent: 95, maxWords: 3 },
   ];
 
-const START_DATE = new Date(2026, 10, 3);
+const START_DATE = new Date(2026, );
 
 export function getTodayIndex(): number {
   const msPerDay = 1000 * 60 * 60 * 24;
