@@ -7,6 +7,7 @@ export type Challenge = {
     target: Emotion;
     minPercent: number;
     maxWords: number;
+    recipient: string;
 }
 
 export type Attempt = {

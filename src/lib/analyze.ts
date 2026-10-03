@@ -1,10 +1,10 @@
 import type { Probabilities } from '../types';
 
-export async function analyzeText(text: string): Promise<Probabilities> {
+export async function analyzeText(text: string, recipient: string): Promise<Probabilities> {
   const response = await fetch('/api/analyze', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ text, recipient: 'mom' }),
+    body: JSON.stringify({ text, recipient }),
   });
   if(!response.ok) {
     throw new Error('Analysis failed!');

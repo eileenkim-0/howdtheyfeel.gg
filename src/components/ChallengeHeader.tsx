@@ -11,9 +11,13 @@ function ChallengeHeader({challenge, attemptsUsed, maxAttempts}: Props) {
         <div className="header">
             <p className="header-label">DAILY CHALLENGE</p>
             <h1>{challenge.title}</h1>
-            <p className="header-target">Target: {challenge.target} · {challenge.minPercent}%+ · max {challenge.maxWords} words · {Array.from({length: maxAttempts}).map((_, i) =>(
-                <span key={i}>{i < attemptsUsed ?'●' : '○'}</span>
-            ))}</p>
+            <p className="header-target">
+            Target: <span style={{ color: `var(--${challenge.target})` }}>{challenge.target}</span>
+            {' · '}{challenge.minPercent}%+ · max {challenge.maxWords} words · 
+            {Array.from({length: maxAttempts}).map((_, i) => (
+                <span key={i} className="dot">{i < attemptsUsed ? '●' : '○'}</span>
+            ))}
+        </p>
         </div>
     );
 }

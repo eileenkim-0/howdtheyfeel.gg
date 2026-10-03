@@ -32,6 +32,10 @@ body{
     color: var(--text);
 }
 
+.dot {
+    color: var(--accent);
+}
+
 .grid {
     display: grid;
     grid-template-columns: 1fr 1.2fr 1fr;
