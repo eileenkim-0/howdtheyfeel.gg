@@ -1,5 +1,6 @@
 # how'd they feel?
 ![how'd they feel? preview](docs/preview.gif)
+
   A daily word game where you write a short message and a 3D face reacts to how the recipient would feel reading it.
 
 **Play it:** [howdtheyfeel.vercel.app](https://howdtheyfeel.vercel.app)
