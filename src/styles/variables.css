@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+    --bg: #2B2E33;
+    --card: #3B3F45;
+    --accent: #E6C8C8;
+    --border: #787D85;
+  
+    --font: 'Inter', sans-serif;
+    --weight-regular: 400;
+    --weight-bold: 700;
+    --text: #A9AEB6;
+    --alt-text: #787D85;
+  
+    --neutral: #A9AEB6;
+    --happy: #E3C98A;
+    --sad: #8FA6C4;
+    --angry: #D49494;
+    --surprised: #E2B394;
+    --fear: #A99BC4;
+    --disgust: #9CB59A;
+    --contempt: #A8988E;
+}
